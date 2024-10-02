@@ -22,7 +22,7 @@ class UserFactory extends Factory
             'email' => $this->faker->unique()->safeEmail(),
             'email_verified_at' => now(),
             'phone' => $this->faker->unique()->phoneNumber,
-            'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi',
+            'password' => '$2y$10$HrJ5Vq.kwzmjks/nRkGz8Oprib3THznXpcjaDh2uerieGjb3Q3Zoy',
             'created_at' => now()->subDays($this->faker->randomFloat(0, 0, 40))
         ];
     }

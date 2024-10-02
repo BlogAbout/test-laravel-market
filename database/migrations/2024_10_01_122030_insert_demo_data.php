@@ -17,9 +17,9 @@ class InsertDemoData extends Migration
                 'id' => 1,
                 'name' => 'Администратор',
                 'type' => 1,
-                'email' => 'info@blog-about.ru',
+                'email' => 'test@test.ru',
                 'phone' => '+7 (999) 888-77-66',
-                'password' => '$2y$10$vMlIYnzasMrELNvvVI0ShOegZt9oIQX8CK5ypUONP35ZeKk6442D2',
+                'password' => '$2y$10$HrJ5Vq.kwzmjks/nRkGz8Oprib3THznXpcjaDh2uerieGjb3Q3Zoy',
                 'created_at' => '2024-10-01 12:20:30',
                 'updated_at' => '2024-10-01 12:20:30'
             ]

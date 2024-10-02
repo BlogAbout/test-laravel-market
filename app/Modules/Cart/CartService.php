@@ -61,7 +61,7 @@ class CartService
         $cart = $this->cartRepository->fetchAll();
 
         if (isset($cart[$productId])) {
-            $cart[$productId] = $qty ? $cart[$productId] = $qty : $cart[$productId] += $qty;
+            $cart[$productId] = $qty ? $cart[$productId] + $qty : $cart[$productId] + 1;
         } else {
             $cart[$productId] = $qty;
         }

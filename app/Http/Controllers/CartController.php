@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\Cart\StoreRequest;
 use App\Modules\Cart\CartService;
 use App\Modules\Cart\Repositories\ICartRepository;
 use App\Modules\Product\Repositories\IProductRepository;
@@ -32,10 +33,12 @@ class CartController extends Controller
         return view('cart.index', compact('cart'));
     }
 
-    public function add(Request $request)
+    public function add(StoreRequest $request)
     {
-        $productId = $request->input('productId');
-        $qty = $request->input('qty');
+        $data = $request->validated();
+
+        $productId = $data['productId'];
+        $qty = $data['qty'];
 
         $this->cartService->add($productId, $qty ?? null);
 
