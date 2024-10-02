@@ -21,6 +21,7 @@
                             <th scope="col">Сумма</th>
                             <th scope="col">Итог</th>
                             <th scope="col">Дата</th>
+                            <th scope="col">Удалить</th>
                         </tr>
                         </thead>
 
@@ -31,6 +32,13 @@
                             <th scope="col">{{$order->sum}}</th>
                             <th scope="col">{{$order->total}}</th>
                             <th scope="col">{{$order->created_at}}</th>
+                            <th scope="col">
+                                <form action="{{route('order.delete', $order->id)}}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-outline-danger btn-sm">Удалить заказ</button>
+                                </form>
+                            </th>
                         </tr>
                         <tr>
                             <td colspan="5">

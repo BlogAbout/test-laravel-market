@@ -72,4 +72,9 @@ class OrderService
 
         return $order;
     }
+
+    public function delete(int $orderId): void
+    {
+        $this->orderRepository->delete($orderId);
+    }
 }

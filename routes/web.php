@@ -21,9 +21,11 @@ Route::group(['namespace' => 'Cart', 'prefix' => 'cart'], function () {
 });
 
 Route::group(['namespace' => 'Order', 'prefix' => 'order'], function () {
-    Route::get('/', [OrderController::class, 'index'])
-        ->middleware(['auth'])
-        ->name('order.index');
+    Route::group(['middleware' => ['auth']], function() {
+        Route::get('/', [OrderController::class, 'index'])->name('order.index');
+        Route::delete('/{order}', [OrderController::class, 'delete'])->name('order.delete');
+    });
+
     Route::post('/', [OrderController::class, 'store'])->name('order.store');
 });
 

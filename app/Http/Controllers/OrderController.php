@@ -43,4 +43,11 @@ class OrderController extends Controller
 
         return redirect()->route('cart.index');
     }
+
+    public function delete(int $orderId)
+    {
+        $this->orderService->delete($orderId);
+
+        return redirect()->route('order.index');
+    }
 }
